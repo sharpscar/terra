@@ -1,0 +1,40 @@
+create table marathon(
+    ma_idx int(10) not null,
+    ma_date date not null,
+    ma_place varchar(100) Not null,
+    ma_distance char(20) not null,
+    ma_period char(20) not null,    
+    ma_name varchar(100) Not null,       
+    ma_fee int(100) default 0,
+    ma_file_name_0 char(55) default null,
+    ma_file_name_1 char(55) default null,
+    ma_file_copied_0 char(55) default null,
+    ma_file_copied_1 char(55) default null,    
+    ma_reg_date DATETIME,
+    primary key(ma_idx)
+    )DEFAULT CHARSET=utf8;
+    
+
+    
+CREATE TABLE IF NOT EXISTS member (
+  id char(15) NOT NULL,
+  pass char(15) NOT NULL,
+  name char(10) NOT NULL,
+  nick char(10) NOT NULL,
+  phone char(20) NOT NULL,
+  email char(41) DEFAULT NULL,
+  regist_day char(20) DEFAULT NULL,
+  level int(11) DEFAULT NULL,
+  account_bank int(10) default null,  
+  PRIMARY KEY (id)
+) DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE IF NOT EXISTS apply (
+ ap_pub_num int(10) Auto_increment,
+ mem_id varchar(20) default null,
+ ap_tsize varchar(10) default null,
+ ap_fee boolean default false,
+ ma_idx int(10) not null,
+  PRIMARY KEY (ap_pub_num)
+) DEFAULT CHARSET=utf8;
